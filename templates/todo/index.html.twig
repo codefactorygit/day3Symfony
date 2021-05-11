@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TodoController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% for todo in todos %}
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ todo.name }}</h5>
+                    <p class="card-text">{{ todo.dueDate|date('F j, Y, g:i a') }}</p>
+                    <a href="/edit/{{ todo.id }}" class="btn btn-primary">Edit</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
